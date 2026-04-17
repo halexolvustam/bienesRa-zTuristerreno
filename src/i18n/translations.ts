@@ -96,7 +96,7 @@ export const translations: Record<string, Translation> = {
     },
     contact: {
       title: 'Contact me',
-      subtitle: 'I'm here to help you find the best investment for you',
+      subtitle: 'I am here to help you find the best investment for you',
       form: {
         name: 'Full name',
         email: 'Email address',
