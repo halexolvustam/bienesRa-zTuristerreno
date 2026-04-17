@@ -6,6 +6,7 @@ import { Gallery } from '@/sections/Gallery';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import './App.css';
+import DevelopmentCard from "./components/ui/DevelopmentCard";
 
 function App() {
   return (
