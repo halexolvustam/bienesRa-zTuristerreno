@@ -44,7 +44,7 @@ export function Navbar() {
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}
           >
-            Bienes Raíces Yucatán
+            Turisterreno. Inversión Inteligente en Bienes Raíces.
           </a>
 
           {/* Desktop Navigation */}
