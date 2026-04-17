@@ -43,7 +43,7 @@ export const translations: Record<string, Translation> = {
         email: 'Correo electrónico',
         phone: 'Teléfono',
         message: 'Mensaje',
-        submit: 'Enviar mensaje',
+        submit: 'Recibir información completa',
         sending: 'Enviando...',
         success: '¡Mensaje enviado con éxito!',
       },
