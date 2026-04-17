@@ -187,7 +187,7 @@ export function Developments() {
                   </div>
 
                 {/* Gallery */}
-<div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
   {dev.gallery && dev.gallery.map((img, i) => (
     <img
       key={i}
