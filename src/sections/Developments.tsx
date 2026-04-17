@@ -208,6 +208,11 @@ export function Developments() {
                   <p style={{color: "red", fontWeight: "bold"}}>
   TEST GALERIA OK
 </p>
+
+<p style={{ color: "red", fontWeight: "bold" }}>
+  GALERIA DEBUG: {dev.gallery?.length}
+</p>
+
                   {/* Features Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                     {dev.features.map((feature, idx) => {
