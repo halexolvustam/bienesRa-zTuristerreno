@@ -186,17 +186,6 @@ export function Developments() {
                     />
                   </div>
 
-                {/* Gallery */}
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-  {dev.gallery && dev.gallery.map((img, i) => (
-    <img
-      key={i}
-      src={img}
-      alt={dev.name}
-      className="w-full h-32 object-cover rounded-lg"
-    />
-  ))}
-</div>
 
                   {/* Tagline */}
                   <p className="text-xl text-amber-600 font-medium mb-4">
@@ -205,7 +194,9 @@ export function Developments() {
 
                   {/* Description */}
                   <p className="text-gray-600 mb-6">{dev.description}</p>
-
+                  <p style={{color: "red", fontWeight: "bold"}}>
+  TEST GALERIA OK
+</p>
                   {/* Features Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                     {dev.features.map((feature, idx) => {
