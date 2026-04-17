@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function DevelopmentCard({ title, description, images }) {
+export default function DevelopmentCard({ id, title, description, images }) {
+  const phone = "5215566545971";
+
+  const message = encodeURIComponent(
+  `Hola, me interesa información de ${title} (ID: ${id})`
+);
+
+const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
   return (
     <div style={{ marginBottom: "40px" }}>
       <h2>{title}</h2>
@@ -19,11 +26,12 @@ export default function DevelopmentCard({ title, description, images }) {
       </div>
 
       <a
-        href="https://wa.me/521XXXXXXXXXX"
-        target="_blank"
-      >
-        Recibir información
-      </a>
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Recibir información
+</a>
     </div>
   );
 }
