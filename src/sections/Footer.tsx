@@ -19,17 +19,17 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Bienes Raíces Yucatán
+              Turisterreno. Inversión Inteligente en Bienes Raíces.
             </h3>
             <p className="text-gray-400 text-sm">
               Desarrollos exclusivos que conectan con la esencia de la tierra,
-              el mar y la historia de Yucatán.
+              el mar y la historia de Yucatán y Quintana Roo.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
+            <h4 className="font-semibold mb-4">Enlaces rápidos</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <a href="#home" className="hover:text-white transition-colors">
@@ -65,7 +65,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="font-semibold mb-4">Síguenos</h4>
+            <h4 className="font-semibold mb-4">Sígueme</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -85,7 +85,7 @@ export function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © {currentYear} Bienes Raíces Yucatán. {t.footer.rights}
+              © {currentYear} Turisterreno. Inversión Inteligente en Bienes Raíces. {t.footer.rights}
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors">
