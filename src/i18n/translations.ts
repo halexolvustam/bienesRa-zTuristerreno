@@ -11,13 +11,13 @@ export const translations: Record<string, Translation> = {
     hero: {
       title: 'Encuentra tu patrimonio en Yucatán',
       subtitle: 'Desarrollos exclusivos que conectan con la esencia de la tierra, el mar y la historia',
-      cta: 'Explorar Desarrollos',
+      cta: 'Explora Desarrollos',
     },
     developments: {
       title: 'Nuestros Desarrollos',
       subtitle: 'Cada proyecto es una puerta hacia un estilo de vida único',
       viewMore: 'Ver más',
-      downloadBrochure: 'Descargar Brochure',
+      downloadBrochure: 'Descarga Brochure',
       amenities: 'Amenidades',
       location: 'Ubicación',
       price: 'Precio desde',
@@ -36,8 +36,8 @@ export const translations: Record<string, Translation> = {
       subtitle: 'Descubre la belleza de nuestros desarrollos',
     },
     contact: {
-      title: 'Contáctanos',
-      subtitle: 'Estamos aquí para ayudarte a encontrar tu inversión ideal',
+      title: 'Contáctame',
+      subtitle: 'Estoy aquí para ayudarte a encontrar tu inversión ideal',
       form: {
         name: 'Nombre completo',
         email: 'Correo electrónico',
@@ -95,8 +95,8 @@ export const translations: Record<string, Translation> = {
       subtitle: 'Discover the beauty of our developments',
     },
     contact: {
-      title: 'Contact Us',
-      subtitle: 'We are here to help you find your ideal investment',
+      title: 'Contact me',
+      subtitle: 'I'm here to help you find the best investment for you',
       form: {
         name: 'Full name',
         email: 'Email address',
