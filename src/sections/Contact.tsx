@@ -26,22 +26,22 @@ export function Contact() {
     {
       icon: Phone,
       label: t.contact.info.phone,
-      value: '+52 (999) 123-4567',
+      value: '+52 (556) 654 5971',
     },
     {
       icon: Mail,
       label: t.contact.info.email,
-      value: 'info@bienesraicesyucatan.com',
+      value: 'asesor.alexolvera@gmail.com',
     },
     {
       icon: MapPin,
       label: t.contact.info.address,
-      value: 'Mérida, Yucatán, México',
+      value: 'Sureste Mexicano',
     },
     {
       icon: Clock,
       label: t.contact.info.hours,
-      value: 'Lun - Vie: 9:00 - 18:00',
+      value: 'Lun - Dom: 9:00 - 22:00',
     },
   ];
 
@@ -68,7 +68,7 @@ export function Contact() {
                   {t.contact.form.success}
                 </h3>
                 <p className="text-gray-600">
-                  Nos pondremos en contacto contigo pronto.
+                  Me pondré en contacto contigo pronto.
                 </p>
               </div>
             ) : (
@@ -100,7 +100,7 @@ export function Contact() {
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="+52 (999) 123-4567"
+                    placeholder="+52 (999) 123 4567"
                     className="mt-1"
                   />
                 </div>
