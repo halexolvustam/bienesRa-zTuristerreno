@@ -128,7 +128,9 @@ export const developments: Development[] = [
       { icon: 'CreditCard', label: 'Financiamiento', value: '60 meses sin intereses' },
     ],
     brochureUrl: '/brochures/BookManikaab.pdf',
-    legalDocs: [],
+    legalDocs: [
+      { name: 'Packlegaletapa2', url: '/legal/Packlegaletapa2.pdf', type: 'pdf' },
+    ],
     type: 'terrenos',
     status: 'available',
   },

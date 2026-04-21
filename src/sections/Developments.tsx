@@ -176,6 +176,23 @@ export function Developments() {
                   </DialogTitle>
                 </DialogHeader>
 
+                <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`https://wa.me/5215566545971?text=${encodeURIComponent(
+                    `Hola, me interesa ${dev.name}. ¿Me puedes enviar información y disponibilidad?`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center font-semibold"
+                >
+                  Solicitar información directa
+                </a>
+
+                <span className="text-red-600 font-semibold flex items-center">
+                  Disponibilidad limitada
+                </span>
+              </div>
+
                 <div className="mt-4">
                   {/* Hero Image */}
                   <div className="relative h-64 rounded-xl overflow-hidden mb-6">
@@ -186,18 +203,6 @@ export function Developments() {
                     />
                   </div>
 
-                  {/* Gallery */}
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-  {dev.gallery && dev.gallery.map((img, i) => (
-    <img
-      key={i}
-      src={img}
-      alt={dev.name}
-      className="w-full h-32 object-cover rounded-lg"
-    />
-  ))}
-</div>
-
                   {/* Tagline */}
                   <p className="text-xl text-amber-600 font-medium mb-4">
                     {dev.tagline}
@@ -206,12 +211,20 @@ export function Developments() {
                   {/* Description */}
                   <p className="text-gray-600 mb-6">{dev.description}</p>
                   <p style={{color: "red", fontWeight: "bold"}}>
-  TEST GALERIA OK
-</p>
+                  </p>
 
-<p style={{ color: "red", fontWeight: "bold" }}>
-  GALERIA DEBUG: {dev.gallery?.length}
-</p>
+                  <div className="mb-6">
+                  <p className="text-lg font-semibold text-gray-900">
+                    {dev.priceRange}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {dev.location}
+                  </p>
+                </div>
+
+                <p style={{ color: "red", fontWeight: "bold" }}>
+                  {dev.gallery?.length}
+                </p>
 
                   {/* Features Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
@@ -250,8 +263,51 @@ export function Developments() {
                     </div>
                   </div>
 
+                   {/* Gallery */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                {dev.gallery && dev.gallery.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={dev.name}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                ))}
+              </div>
+
                   {/* Actions */}
                   <div className="flex flex-col sm:flex-row gap-3">
+
+                  <Button
+                  className="flex-1 bg-green-600 hover:bg-green-700"
+                  asChild
+                >
+                  <a
+                    href={`https://wa.me/5215566545971?text=${encodeURIComponent(
+                      `Hola, me interesa ${dev.name} (web). ¿Me puedes enviar brochure, doc. legal y disponibilidad?`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                  </Button>
+
+                  <Button
+                  className="flex-1 bg-green-600 hover:bg-green-700"
+                  asChild
+                >
+                  <a
+                    href={`https://wa.me/5215566545971?text=${encodeURIComponent(
+                      `Hola, me interesa ${dev.name}. ¿Me puedes enviar brochure, doc. legal y disponibilidad?`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                  </Button>
+
                     <Button
                       className="flex-1 bg-amber-600 hover:bg-amber-700"
                       asChild
