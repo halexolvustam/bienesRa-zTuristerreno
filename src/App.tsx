@@ -2,7 +2,7 @@ import { LanguageProvider } from '@/hooks/useLanguage';
 import { Navbar } from '@/sections/Navbar';
 import { Hero } from '@/sections/Hero';
 import { Developments } from '@/sections/Developments';
-import { Contact } from '@/sections/Contact';
+simport { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import './App.css';
 import DevelopmentCard from "./components/ui/DevelopmentCard";

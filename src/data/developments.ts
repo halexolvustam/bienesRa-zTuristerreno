@@ -1,5 +1,4 @@
 import type { Development } from '@/types';
-
 export const developments: Development[] = [
   {
     id: 'wayakin',

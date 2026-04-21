@@ -293,21 +293,6 @@ export function Developments() {
                   </a>
                   </Button>
 
-                  <Button
-                  className="flex-1 bg-green-600 hover:bg-green-700"
-                  asChild
-                >
-                  <a
-                    href={`https://wa.me/5215566545971?text=${encodeURIComponent(
-                      `Hola, me interesa ${dev.name}. ¿Me puedes enviar brochure, doc. legal y disponibilidad?`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    WhatsApp
-                  </a>
-                  </Button>
-
                     <Button
                       className="flex-1 bg-amber-600 hover:bg-amber-700"
                       asChild
