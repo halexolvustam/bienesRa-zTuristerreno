@@ -183,4 +183,67 @@ export const developments: Development[] = [
     type: 'residencial',
     status: 'available',
   },
+  {
+    id: 'emana-tulum',
+    name: 'Emana Tulum',
+    tagline: 'Eco-residencial en armonía con la naturaleza',
+    description: 'Desarrollo eco-residencial en Tulum diseñado para conectar con la naturaleza y ofrecer un estilo de vida consciente. Con amenidades de primer nivel, ubicación estratégica y alto potencial de plusvalía.',
+    location: 'Tulum, Quintana Roo',
+    priceRange: 'Desde $328,000 MXN',
+    image: '/images/emana/hero.jpg',
+    gallery: [
+      '/images/emana/gallery/1.jpg',
+      '/images/emana/gallery/2.jpg'
+    ],
+    amenities: [
+      'Casa club',
+      'Piscinas',
+      'Área de yoga y meditación',
+      'Terraza bar',
+      'Huerto ecológico',
+      'Parques temáticos',
+      'Seguridad 24/7'
+    ],
+    features: [
+      { icon: 'MapPin', label: 'Ubicación', value: 'A 20 min de Tulum' },
+      { icon: 'Trees', label: 'Concepto', value: 'Eco-residencial' },
+      { icon: 'Shield', label: 'Seguridad', value: '24/7' },
+    ],
+    brochureUrl: '/brochures/emana.pdf',
+    legalDocs: [],
+    type: 'terrenos',
+    status: 'available',
+  },
+  
+  {
+    id: 'aldea-holbox',
+    name: 'Aldea Holbox',
+    tagline: 'Invierte cerca de una de las mejores islas del mundo',
+    description: 'Proyecto residencial en Solferino, punto estratégico cercano a Holbox. Ideal para inversión con alto rendimiento turístico, respaldado por fideicomiso y con acceso a club de playa exclusivo.',
+    location: 'Solferino, Quintana Roo',
+    priceRange: 'Preventa disponible',
+    image: '/images/aldea/hero.jpg',
+    gallery: [
+      '/images/aldea/gallery/1.jpg',
+      '/images/aldea/gallery/2.jpg'
+    ],
+    amenities: [
+      'Club de playa en Holbox',
+      'Casa club',
+      'Piscina',
+      'Coworking',
+      'Cancha de pádel',
+      'Área de yoga',
+      'Parques y áreas verdes'
+    ],
+    features: [
+      { icon: 'MapPin', label: 'Ubicación', value: 'Cerca de Holbox' },
+      { icon: 'DollarSign', label: 'Inversión', value: 'Alta rentabilidad' },
+      { icon: 'Shield', label: 'Legal', value: 'Fideicomiso' },
+    ],
+    brochureUrl: '/brochures/aldea-holbox.pdf',
+    legalDocs: [],
+    type: 'terrenos',
+    status: 'available',
+  }
 ];
