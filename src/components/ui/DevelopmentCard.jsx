@@ -30,7 +30,8 @@ const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
   target="_blank"
   rel="noopener noreferrer"
 >
-  Recibir información
+Me gustaría recibir información completa, disponibilidad y esquema de inversión.
+
 </a>
     </div>
   );

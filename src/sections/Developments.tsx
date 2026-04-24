@@ -177,17 +177,6 @@ export function Developments() {
                 </DialogHeader>
 
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={`https://wa.me/5215566545971?text=${encodeURIComponent(
-                    `Hola, me interesa ${dev.name}. ¿Me puedes enviar información y disponibilidad?`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-center font-semibold"
-                >
-                  Solicitar información directa
-                </a>
-
                 <span className="text-red-600 font-semibold flex items-center">
                   Disponibilidad limitada
                 </span>
@@ -221,10 +210,6 @@ export function Developments() {
                     {dev.location}
                   </p>
                 </div>
-
-                <p style={{ color: "red", fontWeight: "bold" }}>
-                  {dev.gallery?.length}
-                </p>
 
                   {/* Features Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
@@ -284,12 +269,12 @@ export function Developments() {
                 >
                   <a
                     href={`https://wa.me/5215566545971?text=${encodeURIComponent(
-                      `Hola, me interesa ${dev.name} (web). ¿Me puedes enviar brochure, doc. legal y disponibilidad?`
+                      `Hola, me interesa ${dev.name} (web). Estoy evaluando opciones y me gustaría conocer disponibilidad, esquema de inversión y detalles completos.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    WhatsApp
+                    Requiero información completa
                   </a>
                   </Button>
 
