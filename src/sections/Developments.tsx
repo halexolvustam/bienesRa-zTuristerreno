@@ -9,11 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import {
-  MapPin,
-  Download,
-  FileText,
-} from 'lucide-react';
+import { Download, FileText } from 'lucide-react';
 
 export function Developments() {
   const { t } = useLanguage();
@@ -23,41 +19,35 @@ export function Developments() {
 
   return (
     <>
-      <section id="developments" className="py-20 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-6xl mx-auto px-4">
 
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+          {/* TÍTULO */}
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold">
               {t.developments.title}
             </h2>
-            <p className="text-gray-600">
-              {t.developments.subtitle}
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* GRID */}
+          <div className="grid md:grid-cols-2 gap-6">
             {developments.map((dev) => (
               <Dialog key={dev.id}>
                 <DialogTrigger asChild>
-                  <div className="bg-white rounded-xl shadow cursor-pointer hover:shadow-xl transition">
-
-                    <img
-                      src={dev.image}
-                      className="h-64 w-full object-cover"
-                    />
-
+                  <div className="bg-white rounded-lg shadow cursor-pointer hover:shadow-xl">
+                    <img src={dev.image} className="h-60 w-full object-cover" />
                     <div className="p-4">
-                      <h3 className="text-xl font-bold">{dev.name}</h3>
+                      <h3 className="font-bold text-lg">{dev.name}</h3>
                       <p className="text-sm text-gray-500">{dev.location}</p>
                     </div>
                   </div>
                 </DialogTrigger>
 
-                {/* MODAL GRANDE */}
-                <DialogContent className="w-screen h-screen max-w-none p-6 overflow-y-auto">
+                {/* MODAL */}
+                <DialogContent className="max-w-5xl w-full p-6 rounded-xl overflow-y-auto">
 
                   <DialogHeader>
-                    <DialogTitle className="text-3xl">
+                    <DialogTitle className="text-2xl font-bold">
                       {dev.name}
                     </DialogTitle>
                   </DialogHeader>
@@ -66,23 +56,22 @@ export function Developments() {
                     Disponibilidad limitada
                   </p>
 
-                  {/* HERO */}
                   <img
                     src={dev.image}
-                    className="w-full h-80 object-cover rounded-lg mb-6"
+                    className="w-full h-72 object-cover rounded mb-6"
                   />
 
-                  <p className="text-gray-600 mb-6">
+                  <p className="mb-6 text-gray-600">
                     {dev.description}
                   </p>
 
                   {/* GALERÍA */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
                     {dev.gallery?.map((img, i) => (
                       <img
                         key={i}
                         src={img}
-                        className="h-40 w-full object-cover rounded cursor-pointer hover:scale-105"
+                        className="h-32 w-full object-cover rounded cursor-pointer hover:scale-105"
                         onClick={() => {
                           setCurrentGallery(dev.gallery || []);
                           setSelectedIndex(i);
@@ -92,7 +81,7 @@ export function Developments() {
                   </div>
 
                   {/* BOTONES */}
-                  <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex flex-col md:flex-row gap-3">
 
                     {/* WHATSAPP */}
                     <Button
@@ -108,7 +97,7 @@ export function Developments() {
                         window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
                       }}
                     >
-                      Solicitar información completa
+                      Solicitar información
                     </Button>
 
                     {/* BROCHURE */}
@@ -138,18 +127,22 @@ export function Developments() {
         </div>
       </section>
 
-      {/* LIGHTBOX CARRUSEL */}
+      {/* LIGHTBOX */}
       {selectedIndex !== null && (
-        <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-50">
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999]"
+          onClick={() => setSelectedIndex(null)}
+        >
 
           {/* IZQUIERDA */}
           <button
-            className="absolute left-4 text-white text-5xl"
-            onClick={() =>
+            className="absolute left-4 text-white text-4xl"
+            onClick={(e) => {
+              e.stopPropagation();
               setSelectedIndex((prev) =>
                 prev === 0 ? currentGallery.length - 1 : prev! - 1
-              )
-            }
+              );
+            }}
           >
             ←
           </button>
@@ -157,24 +150,26 @@ export function Developments() {
           {/* IMAGEN */}
           <img
             src={currentGallery[selectedIndex]}
-            className="max-w-[90%] max-h-[90%] rounded-lg"
+            className="max-w-[90%] max-h-[90%] rounded"
+            onClick={(e) => e.stopPropagation()}
           />
 
           {/* DERECHA */}
           <button
-            className="absolute right-4 text-white text-5xl"
-            onClick={() =>
+            className="absolute right-4 text-white text-4xl"
+            onClick={(e) => {
+              e.stopPropagation();
               setSelectedIndex((prev) =>
                 prev === currentGallery.length - 1 ? 0 : prev! + 1
-              )
-            }
+              );
+            }}
           >
             →
           </button>
 
           {/* CERRAR */}
           <button
-            className="absolute top-4 right-4 text-white text-3xl"
+            className="absolute top-4 right-4 text-white text-2xl"
             onClick={() => setSelectedIndex(null)}
           >
             ✕
