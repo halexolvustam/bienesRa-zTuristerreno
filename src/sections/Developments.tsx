@@ -71,9 +71,39 @@ export function Developments() {
                   />
 
                   {/* DESCRIPCIÓN */}
-                  <p className="mb-6 text-gray-600">
-                    {dev.description}
-                  </p>
+                  <div className="mb-6">
+  <p className="text-gray-600 mb-4">
+    {dev.description}
+  </p>
+
+  <p className="text-lg font-semibold text-gray-900">
+    {dev.priceRange}
+  </p>
+
+  <p className="text-sm text-gray-500">
+    {dev.location}
+  </p>
+</div>
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+  {dev.features?.map((feature, i) => (
+    <div key={i} className="bg-stone-100 p-3 rounded text-center">
+      <p className="text-xs text-gray-500">{feature.label}</p>
+      <p className="font-semibold">{feature.value}</p>
+    </div>
+  ))}
+</div>
+
+<div className="mb-6">
+  <h4 className="font-semibold mb-2">Amenidades</h4>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+    {dev.amenities?.map((item, i) => (
+      <span key={i} className="text-sm text-gray-600">
+        • {item}
+      </span>
+    ))}
+  </div>
+</div>
 
                   {/* GALERÍA */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
