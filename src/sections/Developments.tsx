@@ -125,9 +125,27 @@ export function Developments() {
                     <Button
                       className="flex-1 bg-green-600"
                       onClick={() => {
+                        const budget = prompt("¿En qué rango estás considerando invertir?");
+                        if (!budget) return;
+                      
                         const msg = encodeURIComponent(
-                          `Hola, me interesa ${dev.name}. ¿Me puedes enviar información completa?`
-                        );
+                          `Hola, me interesa ${dev.name}.
+                          Estoy evaluando invertir y mi rango es: ${budget}.
+                          
+                          ¿Me puedes compartir:
+                          - disponibilidad actual
+                          - ubicación exacta
+                          - esquema de pago?`
+                          );
+                      
+                        // TRACKING
+                        if (typeof window !== "undefined" && window.gtag) {
+                          window.gtag("event", "click_whatsapp", {
+                            event_category: "lead",
+                            event_label: dev.name,
+                          });
+                        }
+                      
                         window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
                       }}
                     >
