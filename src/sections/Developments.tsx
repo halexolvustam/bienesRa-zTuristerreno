@@ -22,11 +22,14 @@ export function Developments() {
       <section className="py-20 bg-stone-50">
         <div className="max-w-6xl mx-auto px-4">
 
-          {/* TÍTULO */}
-          <div className="text-center mb-10">
+          {/* HEADER */}
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold">
               {t.developments.title}
             </h2>
+            <p className="text-gray-600">
+              {t.developments.subtitle}
+            </p>
           </div>
 
           {/* GRID */}
@@ -34,8 +37,13 @@ export function Developments() {
             {developments.map((dev) => (
               <Dialog key={dev.id}>
                 <DialogTrigger asChild>
-                  <div className="bg-white rounded-lg shadow cursor-pointer hover:shadow-xl">
-                    <img src={dev.image} className="h-60 w-full object-cover" />
+                  <div className="bg-white rounded-lg shadow cursor-pointer hover:shadow-xl transition">
+
+                    <img
+                      src={dev.image}
+                      className="h-60 w-full object-cover"
+                    />
+
                     <div className="p-4">
                       <h3 className="font-bold text-lg">{dev.name}</h3>
                       <p className="text-sm text-gray-500">{dev.location}</p>
@@ -44,9 +52,9 @@ export function Developments() {
                 </DialogTrigger>
 
                 {/* MODAL */}
-                <DialogContent className="max-w-5xl w-full p-6 rounded-xl overflow-y-auto">
+                <DialogContent className="max-w-5xl w-full h-[90vh] overflow-y-auto rounded-xl p-6">
 
-                  <DialogHeader>
+                  <DialogHeader className="sticky top-0 bg-white z-10 pb-2">
                     <DialogTitle className="text-2xl font-bold">
                       {dev.name}
                     </DialogTitle>
@@ -56,11 +64,13 @@ export function Developments() {
                     Disponibilidad limitada
                   </p>
 
+                  {/* HERO */}
                   <img
                     src={dev.image}
                     className="w-full h-72 object-cover rounded mb-6"
                   />
 
+                  {/* DESCRIPCIÓN */}
                   <p className="mb-6 text-gray-600">
                     {dev.description}
                   </p>
