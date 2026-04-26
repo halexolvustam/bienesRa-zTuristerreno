@@ -151,7 +151,29 @@ export function Contact() {
                   <h4 className="text-sm font-medium text-gray-500 mb-1">
                     {item.label}
                   </h4>
+                 
+                  {item.label === t.contact.info.phone ? (
+                  <a
+                    href="tel:+5215566545971"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "click_call", {
+                          event_category: "lead",
+                          event_label: "phone_call",
+                        });
+
+                        (window as any).gtag("event", "conversion", {
+                          send_to: "AW-10936994474/XXXXXXXXX"
+                        });
+                      }
+                    }}
+                    className="text-gray-900 font-semibold hover:text-amber-600"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
                   <p className="text-gray-900 font-semibold">{item.value}</p>
+                )}
                 </div>
               ))}
             </div>
