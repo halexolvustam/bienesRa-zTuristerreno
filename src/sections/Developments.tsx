@@ -140,11 +140,9 @@ export function Developments() {
                       
                         // TRACKING
                         if (typeof window !== "undefined" && window.gtag) {
-                          window.gtag("event", "click_whatsapp", {
-                            event_category: "lead",
-                            event_label: dev.name,
+                          window.gtag('event', 'conversion', {
+                            'send_to': 'AW-10936994474'
                           });
-                        }
                       
                         window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
                       }}
