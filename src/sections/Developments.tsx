@@ -139,10 +139,11 @@ export function Developments() {
                           );
                       
                         // TRACKING
-                        if (typeof window !== "undefined" && window.gtag) {
-                          window.gtag('event', 'conversion', {
-                            'send_to': 'AW-10936994474'
+                        if (typeof window !== "undefined" && (window as any).gtag) {
+                          (window as any).gtag('event', 'conversion', {
+                            send_to: 'AW-XXXXXXXXX/XXXXXXXXX'
                           });
+                        }
                       
                         window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
                       }}
