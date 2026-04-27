@@ -141,7 +141,7 @@ export function Developments() {
                         // TRACKING
                         if (typeof window !== "undefined" && (window as any).gtag) {
                           (window as any).gtag('event', 'conversion', {
-                            send_to: 'AW-XXXXXXXXX/XXXXXXXXX'
+                            send_to: 'AW-10936994474/XXXXXXXXX'
                           });
                         }
                       
