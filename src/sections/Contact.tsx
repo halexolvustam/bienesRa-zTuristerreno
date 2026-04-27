@@ -182,11 +182,25 @@ export function Contact() {
                   {/* EMAIL */}
                   {item.label === t.contact.info.email && (
                     <a
-                      href="mailto:asesor.alexolvera@gmail.com"
-                      className="text-gray-900 font-semibold hover:text-amber-600"
-                    >
-                      {item.value}
-                    </a>
+                    href="mailto:asesor.alexolvera@gmail.com?subject=Solicitud%20de%20información&body=Hola,%20me%20interesa%20un%20terreno..."
+                    className="text-gray-900 font-semibold hover:text-amber-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "click_email", {
+                          event_category: "lead",
+                          event_label: "email_contact",
+                        });
+                  
+                        (window as any).gtag("event", "conversion", {
+                          send_to: "AW-10936994474/XXXXXXXXX"
+                        });
+                      }
+                    }}
+                  >
+                    {item.value}
+                  </a>
                   )}
 
                   {/* OTROS */}
