@@ -15,7 +15,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -48,6 +47,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -59,7 +59,8 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+
+          {/* FORM */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             {isSubmitted ? (
               <div className="text-center py-12">
@@ -73,6 +74,7 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+
                 <div>
                   <Label htmlFor="name">{t.contact.form.name}</Label>
                   <Input
@@ -133,13 +135,15 @@ export function Contact() {
                     </>
                   )}
                 </Button>
+
               </form>
             )}
           </div>
 
-          {/* Contact Info */}
+          {/* CONTACT INFO */}
           <div className="space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
@@ -148,49 +152,68 @@ export function Contact() {
                   <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4">
                     <item.icon className="w-6 h-6 text-amber-600" />
                   </div>
+
                   <h4 className="text-sm font-medium text-gray-500 mb-1">
                     {item.label}
                   </h4>
-                 
-                  {item.label === t.contact.info.phone ? (
-                  <a
-                    href="tel:+5215566545971"
-                    onClick={() => {
-                      if (typeof window !== "undefined" && (window as any).gtag) {
-                        (window as any).gtag("event", "click_call", {
-                          event_category: "lead",
-                          event_label: "phone_call",
-                        });
 
-                        (window as any).gtag("event", "conversion", {
-                          send_to: "AW-10936994474/XXXXXXXXX"
-                        });
-                      }
-                    }}
-                    className="text-gray-900 font-semibold hover:text-amber-600"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="text-gray-900 font-semibold">{item.value}</p>
-                )}
+                  {/* PHONE */}
+                  {item.label === t.contact.info.phone && (
+                    <a
+                      href="tel:+5215566545971"
+                      className="text-gray-900 font-semibold hover:text-amber-600"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && (window as any).gtag) {
+                          (window as any).gtag("event", "click_call", {
+                            event_category: "lead",
+                            event_label: "phone_call",
+                          });
+
+                          (window as any).gtag("event", "conversion", {
+                            send_to: "AW-10936994474/XXXXXXXXX"
+                          });
+                        }
+                      }}
+                    >
+                      {item.value}
+                    </a>
+                  )}
+
+                  {/* EMAIL */}
+                  {item.label === t.contact.info.email && (
+                    <a
+                      href="mailto:asesor.alexolvera@gmail.com"
+                      className="text-gray-900 font-semibold hover:text-amber-600"
+                    >
+                      {item.value}
+                    </a>
+                  )}
+
+                  {/* OTROS */}
+                  {item.label !== t.contact.info.phone &&
+                   item.label !== t.contact.info.email && (
+                    <p className="text-gray-900 font-semibold">
+                      {item.value}
+                    </p>
+                  )}
+
                 </div>
               ))}
+
             </div>
 
-            {/* Map Placeholder */}
+            {/* MAPA */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-64">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238390.60398459968!2d-89.73052995!3d20.98002955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56715cab0e33a9%3A0x48eacdd2935e97e6!2sM%C3%A9rida%2C%20Yucat%C3%A1n!5e0!3m2!1ses!2smx!4v1704067200000!5m2!1ses!2smx"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación"
               />
             </div>
+
           </div>
         </div>
       </div>
