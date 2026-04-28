@@ -1,4 +1,3 @@
-cat > src/sections/Contact.tsx << 'EOF'
 import { useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,6 @@ export function Contact() {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,13 +29,8 @@ export function Contact() {
     );
 
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "form_submit_contact", {
-        event_category: "lead",
-        event_label: "contact_form",
-      });
-      (window as any).gtag("event", "conversion", {
-        send_to: "AW-10936994474/form_contact"
-      });
+      (window as any).gtag("event", "form_submit_contact", { event_category: "lead", event_label: "contact_form" });
+      (window as any).gtag("event", "conversion", { send_to: "AW-10936994474/form_contact" });
     }
 
     window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
@@ -70,7 +63,6 @@ export function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          {/* FORMULARIO */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             {isSubmitted ? (
               <div className="text-center py-12">
@@ -113,7 +105,6 @@ export function Contact() {
             )}
           </div>
 
-          {/* INFO DE CONTACTO */}
           <div className="space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {contactInfo.map((item, index) => (
@@ -153,7 +144,6 @@ export function Contact() {
               ))}
             </div>
 
-            {/* MAPA */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-64">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238390.60398459968!2d-89.73052995!3d20.98002955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56715cab0e33a9%3A0x48eacdd2935e97e6!2sM%C3%A9rida%2C%20Yucat%C3%A1n!5e0!3m2!1ses!2smx!4v1704067200000!5m2!1ses!2smx"
@@ -167,4 +157,3 @@ export function Contact() {
     </section>
   );
 }
-EOF
