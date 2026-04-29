@@ -155,7 +155,7 @@ export const developments: Development[] = [
     description: 'Desarrollo eco-residencial en Tulum diseñado para conectar con la naturaleza y ofrecer un estilo de vida consciente. Con amenidades de primer nivel, ubicación estratégica y alto potencial de plusvalía.',
     location: 'Tulum, Quintana Roo',
     priceRange: 'Desde $328,000 MXN',
-    image: '/images/emana-hero.jpg',
+    image: '/images/emana-hero.png',
     gallery: [
       '/images/emana/gallery/01PoRTICO.jpg',
       '/images/emana/gallery/02PoRTICOAEREO.jpg',
