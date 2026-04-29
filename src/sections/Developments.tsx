@@ -70,8 +70,7 @@ export function Developments() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {developments.map((dev) => (
-              <Dialog key={dev.id}>
+          {developments.filter(dev => dev.status !== 'hidden').map((dev) => (              <Dialog key={dev.id}>
                 <DialogTrigger asChild>
                   <div className="bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition-shadow">
                     <img src={dev.image} alt={dev.name} className="h-60 w-full object-cover rounded-t-lg" />
