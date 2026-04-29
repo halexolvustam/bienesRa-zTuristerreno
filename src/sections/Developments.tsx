@@ -9,19 +9,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
 import { Download, FileText, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Developments() {
   const { t } = useLanguage();
 
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
-  const [solicitudDialog, setSolicitudDialog] = useState<{ open: boolean; devName: string; devId: string } | null>(null);
-  const [budget, setBudget] = useState('');
-
-  const openLightbox = (images: string[], index: number) => {
-    setLightbox({ images, index });
-  };
 
   const closeLightbox = () => setLightbox(null);
 
@@ -43,22 +36,6 @@ export function Developments() {
     });
   };
 
-  const sendWhatsApp = () => {
-    if (!solicitudDialog) return;
-    const msg = encodeURIComponent(
-      `Hola, me interesa ${solicitudDialog.devName}.\n` +
-      `Estoy evaluando invertir${budget ? ` y mi rango es: ${budget}` : ''}.\n\n` +
-      `¿Me puedes compartir:\n- disponibilidad actual\n- ubicación exacta\n- esquema de pago?`
-    );
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', { send_to: 'AW-10936994474/lead_whatsapp' });
-      (window as any).gtag('event', 'click_whatsapp', { event_category: 'lead', event_label: solicitudDialog.devName });
-    }
-    window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
-    setSolicitudDialog(null);
-    setBudget('');
-  };
-
   return (
     <>
       <section id="developments" className="py-20 bg-stone-50">
@@ -70,7 +47,8 @@ export function Developments() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-          {developments.filter(dev => dev.status !== 'hidden').map((dev) => (              <Dialog key={dev.id}>
+            {developments.filter(dev => dev.status !== 'hidden').map((dev) => (
+              <Dialog key={dev.id}>
                 <DialogTrigger asChild>
                   <div className="bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition-shadow">
                     <img src={dev.image} alt={dev.name} className="h-60 w-full object-cover rounded-t-lg" />
@@ -111,26 +89,22 @@ export function Developments() {
                     </div>
                   </div>
 
-                  {dev.gallery && dev.gallery.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                      {dev.gallery.map((img, i) => (
-                        <img
-                          key={i}
-                          src={img}
-                          alt={`${dev.name} ${i + 1}`}
-                          className="h-32 w-full object-cover rounded cursor-pointer hover:opacity-80 hover:scale-105 transition-all"
-                          onClick={() => openLightbox(dev.gallery!, i)}
-                        />
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="flex flex-col md:flex-row gap-3">
+                  {/* BOTONES — antes de galería */}
+                  <div className="flex flex-col md:flex-row gap-3 mb-6">
                     <Button
                       className="flex-1 bg-green-600 hover:bg-green-700"
-                      onClick={() => setSolicitudDialog({ open: true, devName: dev.name, devId: dev.id })}
+                      onClick={() => {
+                        const msg = encodeURIComponent(
+                          `Hola, me interesa ${dev.name}.\n` +
+                          `Me gustaría conocer disponibilidad, esquema de pago y detalles.`
+                        );
+                        if (typeof window !== "undefined" && (window as any).gtag) {
+                          (window as any).gtag('event', 'click_whatsapp', { event_category: 'lead', event_label: dev.name });
+                        }
+                        window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
+                      }}
                     >
-                      Solicitar información
+                      Solicitar información por WhatsApp
                     </Button>
 
                     {dev.brochureUrl && (
@@ -151,6 +125,25 @@ export function Developments() {
                       </Button>
                     )}
                   </div>
+
+                  {/* GALERÍA — después de botones */}
+                  {dev.gallery && dev.gallery.length > 0 && (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {dev.gallery.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${dev.name} ${i + 1}`}
+                          className="h-32 w-full object-cover rounded cursor-pointer hover:opacity-80 hover:scale-105 transition-all"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setLightbox({ images: dev.gallery!, index: i });
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
+
                 </DialogContent>
               </Dialog>
             ))}
@@ -158,34 +151,7 @@ export function Developments() {
         </div>
       </section>
 
-      {solicitudDialog && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9998] px-4">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold">Solicitar información</h3>
-              <button onClick={() => { setSolicitudDialog(null); setBudget(''); }}>
-                <X className="w-5 h-5 text-gray-500 hover:text-gray-800" />
-              </button>
-            </div>
-            <p className="text-gray-600 mb-4 text-sm">
-              Te conectaré por WhatsApp sobre <strong>{solicitudDialog.devName}</strong>.
-            </p>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">
-              ¿En qué rango estás considerando invertir? <span className="text-gray-400">(opcional)</span>
-            </label>
-            <Input
-              placeholder="Ej: $300,000 – $500,000 MXN"
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-              className="mb-4"
-            />
-            <Button className="w-full bg-green-600 hover:bg-green-700 text-white" onClick={sendWhatsApp}>
-              Abrir WhatsApp →
-            </Button>
-          </div>
-        </div>
-      )}
-
+      {/* LIGHTBOX */}
       {lightbox && (
         <div
           className="fixed inset-0 bg-black/95 flex items-center justify-center z-[9999]"

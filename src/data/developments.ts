@@ -160,7 +160,6 @@ export const developments: Development[] = [
       '/images/emana/gallery/01PoRTICO.jpg',
       '/images/emana/gallery/02PoRTICOAEREO.jpg',
       '/images/emana/gallery/16PORTICOESPECT.jpg',
-      '/images/emana/gallery/21SANTUARIO.jpg',
       '/images/emana/gallery/AMENIDADES.jpg',
       '/images/emana/gallery/AUDIORAMA.jpg',
       '/images/emana/gallery/audioramAEREA.jpg',
