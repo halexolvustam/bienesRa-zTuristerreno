@@ -1,26 +1,30 @@
-// Tipos para el sitio de bienes raíces
-
 export interface Development {
   id: string;
   name: string;
   tagline: string;
+  taglineEn: string;
   description: string;
+  descriptionEn: string;
   location: string;
+  locationEn: string;
   priceRange: string;
   image: string;
   gallery: string[];
   amenities: string[];
+  amenitiesEn: string[];
   features: Feature[];
   brochureUrl: string;
   legalDocs: LegalDoc[];
   type: 'terrenos' | 'villa' | 'residencial';
-  status: 'available' | 'coming_soon' | 'sold_out';
+  status: 'available' | 'coming_soon' | 'sold_out' | 'hidden';
 }
 
 export interface Feature {
   icon: string;
   label: string;
+  labelEn: string;
   value: string;
+  valueEn?: string;
 }
 
 export interface LegalDoc {
@@ -49,6 +53,10 @@ export interface Translation {
     amenities: string;
     location: string;
     price: string;
+    limitedAvailability: string;
+    requestInfo: string;
+    brochure: string;
+    legal: string;
     status: {
       available: string;
       coming_soon: string;
@@ -86,6 +94,9 @@ export interface Translation {
     rights: string;
     privacy: string;
     terms: string;
+    tagline: string;
+    quickLinks: string;
+    follow: string;
   };
 }
 

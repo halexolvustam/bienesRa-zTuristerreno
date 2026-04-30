@@ -12,8 +12,7 @@ import {
 import { Download, FileText, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Developments() {
-  const { t } = useLanguage();
-
+  const { t, language } = useLanguage();
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
 
   const closeLightbox = () => setLightbox(null);
@@ -36,6 +35,8 @@ export function Developments() {
     });
   };
 
+  const isEn = language === 'en';
+
   return (
     <>
       <section id="developments" className="py-20 bg-stone-50">
@@ -54,8 +55,8 @@ export function Developments() {
                     <img src={dev.image} alt={dev.name} className="h-60 w-full object-cover rounded-t-lg" />
                     <div className="p-4">
                       <h3 className="font-bold text-lg">{dev.name}</h3>
-                      <p className="text-sm text-gray-500">{dev.location}</p>
-                      <p className="text-sm text-gray-600 mt-2 line-clamp-2">{dev.description}</p>
+                      <p className="text-sm text-gray-500">{isEn ? dev.locationEn : dev.location}</p>
+                      <p className="text-sm text-gray-600 mt-2 line-clamp-2">{isEn ? dev.descriptionEn : dev.description}</p>
                     </div>
                   </div>
                 </DialogTrigger>
@@ -65,19 +66,19 @@ export function Developments() {
                     <DialogTitle className="text-2xl font-bold">{dev.name}</DialogTitle>
                   </DialogHeader>
 
-                  <p className="text-red-600 font-semibold mb-4">
-                    {t.developments.limitedAvailability}
-                  </p>
+                  <p className="text-red-600 font-semibold mb-4">{t.developments.limitedAvailability}</p>
                   <img src={dev.image} alt={dev.name} className="w-full h-72 object-cover rounded mb-6" />
-                  <p className="mb-2 text-gray-600">{dev.description}</p>
+
+                  <p className="mb-2 text-gray-600 italic">{isEn ? dev.taglineEn : dev.tagline}</p>
+                  <p className="mb-4 text-gray-600">{isEn ? dev.descriptionEn : dev.description}</p>
                   <p className="text-lg font-semibold text-gray-900 mb-1">{dev.priceRange}</p>
-                  <p className="text-sm text-gray-500 mb-6">{dev.location}</p>
+                  <p className="text-sm text-gray-500 mb-6">{isEn ? dev.locationEn : dev.location}</p>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                     {dev.features?.map((f, i) => (
                       <div key={i} className="bg-stone-100 p-3 rounded text-center">
-                        <p className="text-xs text-gray-500">{f.label}</p>
-                        <p className="font-semibold">{f.value}</p>
+                        <p className="text-xs text-gray-500">{isEn ? f.labelEn : f.label}</p>
+                        <p className="font-semibold">{isEn && f.valueEn ? f.valueEn : f.value}</p>
                       </div>
                     ))}
                   </div>
@@ -85,20 +86,19 @@ export function Developments() {
                   <div className="mb-6">
                     <h4 className="font-semibold mb-2">{t.developments.amenities}</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                      {dev.amenities?.map((a, i) => (
+                      {(isEn ? dev.amenitiesEn : dev.amenities).map((a, i) => (
                         <span key={i} className="text-sm text-gray-600">• {a}</span>
                       ))}
                     </div>
                   </div>
 
-                  {/* BOTONES — antes de galería */}
                   <div className="flex flex-col md:flex-row gap-3 mb-6">
                     <Button
                       className="flex-1 bg-green-600 hover:bg-green-700"
                       onClick={() => {
                         const msg = encodeURIComponent(
                           `Hola, me interesa ${dev.name}.\n` +
-                          `Me gustaría conocer disponibilidad, esquema de pago y detalles.`
+                          `Me gustaria conocer disponibilidad, esquema de pago y detalles.`
                         );
                         if (typeof window !== "undefined" && (window as any).gtag) {
                           (window as any).gtag('event', 'click_whatsapp', { event_category: 'lead', event_label: dev.name });
@@ -128,7 +128,6 @@ export function Developments() {
                     )}
                   </div>
 
-                  {/* GALERÍA — después de botones */}
                   {dev.gallery && dev.gallery.length > 0 && (
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {dev.gallery.map((img, i) => (
@@ -153,7 +152,6 @@ export function Developments() {
         </div>
       </section>
 
-      {/* LIGHTBOX */}
       {lightbox && (
         <div
           className="fixed inset-0 bg-black/95 flex items-center justify-center z-[9999]"
