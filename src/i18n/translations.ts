@@ -21,6 +21,10 @@ export const translations: Record<string, Translation> = {
       amenities: 'Amenidades',
       location: 'Ubicación',
       price: 'Precio desde',
+      limitedAvailability: 'Disponibilidad limitada',
+      requestInfo: 'Solicitar información por WhatsApp',
+      brochure: 'Brochure',
+      legal: 'Legal',
       status: {
         available: 'Disponible',
         coming_soon: 'Próximamente',
@@ -58,6 +62,9 @@ export const translations: Record<string, Translation> = {
       rights: 'Todos los derechos reservados',
       privacy: 'Aviso de Privacidad',
       terms: 'Términos y Condiciones',
+      tagline: 'Desarrollos exclusivos que conectan con la esencia de la tierra, el mar y la historia de Yucatán y Quintana Roo.',
+      quickLinks: 'Enlaces rápidos',
+      follow: 'Sígueme',
     },
   },
   en: {
@@ -80,6 +87,10 @@ export const translations: Record<string, Translation> = {
       amenities: 'Amenities',
       location: 'Location',
       price: 'Price from',
+      limitedAvailability: 'Limited Availability',
+      requestInfo: 'Request Info via WhatsApp',
+      brochure: 'Brochure',
+      legal: 'Legal',
       status: {
         available: 'Available',
         coming_soon: 'Coming Soon',
@@ -117,6 +128,9 @@ export const translations: Record<string, Translation> = {
       rights: 'All rights reserved',
       privacy: 'Privacy Notice',
       terms: 'Terms & Conditions',
+      tagline: 'Exclusive developments connecting with the essence of land, sea, and history of Yucatan and Quintana Roo.',
+      quickLinks: 'Quick Links',
+      follow: 'Follow me',
     },
   },
 };

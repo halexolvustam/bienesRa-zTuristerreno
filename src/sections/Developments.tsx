@@ -65,7 +65,9 @@ export function Developments() {
                     <DialogTitle className="text-2xl font-bold">{dev.name}</DialogTitle>
                   </DialogHeader>
 
-                  <p className="text-red-600 font-semibold mb-4">Disponibilidad limitada</p>
+                  <p className="text-red-600 font-semibold mb-4">
+                    {t.developments.limitedAvailability}
+                  </p>
                   <img src={dev.image} alt={dev.name} className="w-full h-72 object-cover rounded mb-6" />
                   <p className="mb-2 text-gray-600">{dev.description}</p>
                   <p className="text-lg font-semibold text-gray-900 mb-1">{dev.priceRange}</p>
@@ -81,7 +83,7 @@ export function Developments() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2">Amenidades</h4>
+                    <h4 className="font-semibold mb-2">{t.developments.amenities}</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                       {dev.amenities?.map((a, i) => (
                         <span key={i} className="text-sm text-gray-600">• {a}</span>
@@ -104,14 +106,14 @@ export function Developments() {
                         window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
                       }}
                     >
-                      Solicitar información por WhatsApp
+                      {t.developments.requestInfo}
                     </Button>
 
                     {dev.brochureUrl && (
                       <Button className="flex-1 bg-amber-600 hover:bg-amber-700" asChild>
                         <a href={dev.brochureUrl} target="_blank" rel="noopener noreferrer">
                           <Download className="w-4 h-4 mr-2" />
-                          Brochure
+                          {t.developments.brochure}
                         </a>
                       </Button>
                     )}
@@ -120,7 +122,7 @@ export function Developments() {
                       <Button variant="outline" className="flex-1" asChild>
                         <a href={dev.legalDocs[0].url} target="_blank" rel="noopener noreferrer">
                           <FileText className="w-4 h-4 mr-2" />
-                          Legal
+                          {t.developments.legal}
                         </a>
                       </Button>
                     )}
