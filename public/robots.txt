@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bienes-ra-z-turisterreno.vercel.app/sitemap.xml
