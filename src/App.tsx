@@ -2,10 +2,10 @@ import { LanguageProvider } from '@/hooks/useLanguage';
 import { Navbar } from '@/sections/Navbar';
 import { Hero } from '@/sections/Hero';
 import { Developments } from '@/sections/Developments';
+import { About } from '@/sections/About';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import './App.css';
-import DevelopmentCard from "./components/ui/DevelopmentCard";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <main>
           <Hero />
           <Developments />
+          <About />
           <Contact />
         </main>
         <Footer />

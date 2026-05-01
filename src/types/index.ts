@@ -46,6 +46,13 @@ export interface Translation {
     cta: string;
     ctaContact: string;
   };
+  about: {
+    title: string;
+    subtitle: string;
+    role: string;
+    bio1: string;
+    bio2: string;
+  };
   developments: {
     title: string;
     subtitle: string;
