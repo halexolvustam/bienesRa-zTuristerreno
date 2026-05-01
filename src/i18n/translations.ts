@@ -7,6 +7,7 @@ export const translations: Record<string, Translation> = {
       developments: 'Desarrollos',
       gallery: 'Galería',
       contact: 'Contacto',
+      about: 'Turisterreno',
     },
     hero: {
       title: 'Encuentra tu patrimonio en Yucatán',
@@ -81,6 +82,7 @@ export const translations: Record<string, Translation> = {
       developments: 'Developments',
       gallery: 'Gallery',
       contact: 'Contact',
+      about: 'Turisterreno',
     },
     hero: {
       title: 'Find Your Legacy in Yucatan',

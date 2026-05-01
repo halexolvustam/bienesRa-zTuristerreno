@@ -39,6 +39,7 @@ export interface Translation {
     developments: string;
     gallery: string;
     contact: string;
+    about: string;
   };
   hero: {
     title: string;
