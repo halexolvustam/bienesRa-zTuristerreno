@@ -12,6 +12,7 @@ export const translations: Record<string, Translation> = {
       title: 'Encuentra tu patrimonio en Yucatán',
       subtitle: 'Desarrollos exclusivos que conectan con la esencia de la tierra, el mar y la historia',
       cta: 'Explora Desarrollos',
+      ctaContact: 'Contáctanos',
     },
     developments: {
       title: 'Nuestros Desarrollos',
@@ -78,6 +79,7 @@ export const translations: Record<string, Translation> = {
       title: 'Find Your Legacy in Yucatan',
       subtitle: 'Exclusive developments that connect with the essence of land, sea, and history',
       cta: 'Explore Developments',
+      ctaContact: 'Contact Us',
     },
     developments: {
       title: 'Our Developments',

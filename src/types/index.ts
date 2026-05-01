@@ -44,6 +44,7 @@ export interface Translation {
     title: string;
     subtitle: string;
     cta: string;
+    ctaContact: string;
   };
   developments: {
     title: string;
