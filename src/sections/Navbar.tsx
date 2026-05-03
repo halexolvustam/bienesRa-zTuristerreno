@@ -25,7 +25,7 @@ export function Navbar() {
 
         <a href="#home">
           <img
-            src="/logoTuris.png"
+            src="/logoTurisT.png"
             alt="Turisterreno"
             className={`h-14 w-auto transition-all ${isScrolled ? 'opacity-100' : 'brightness-0 invert'}`}
           />
