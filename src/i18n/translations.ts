@@ -10,7 +10,7 @@ export const translations: Record<string, Translation> = {
       about: 'Turisterreno',
     },
     hero: {
-      title: 'Encuentra tu patrimonio en Yucatán',
+      title: 'Encuentra tu patrimonio en Yucatán y Quintana Roo',
       subtitle: 'Desarrollos exclusivos que conectan con la esencia de la tierra, el mar y la historia',
       cta: 'Explora Desarrollos',
       ctaContact: 'Contáctanos',
@@ -18,7 +18,7 @@ export const translations: Record<string, Translation> = {
     about: {
       title: 'Tu Asesor de Confianza',
       subtitle: 'Conectando inversionistas con las mejores oportunidades inmobiliarias',
-      role: 'Experto en Bienes Raíces en la Península de Yucatán',
+      role: 'Experto en Bienes Raíces en la Península de Yucatán y Quintana Roo',
       bio1: 'Con un profundo conocimiento del mercado inmobiliario yucateco, trabajo con los desarrolladores más reconocidos para ofrecerte oportunidades de inversión que combinan rentabilidad, ubicación privilegiada y calidad de vida excepcional.',
       bio2: 'Mi compromiso es acompañarte en cada paso del proceso, desde la selección del desarrollo ideal hasta el cierre exitoso de tu inversión.',
     },
@@ -85,7 +85,7 @@ export const translations: Record<string, Translation> = {
       about: 'Turisterreno',
     },
     hero: {
-      title: 'Find Your Legacy in Yucatan',
+      title: 'Find Your Legacy in Yucatan & Quintana Roo',
       subtitle: 'Exclusive developments that connect with the essence of land, sea, and history',
       cta: 'Explore Developments',
       ctaContact: 'Contact Us',
@@ -93,8 +93,8 @@ export const translations: Record<string, Translation> = {
     about: {
       title: 'Your Trusted Advisor',
       subtitle: 'Connecting investors with the best real estate opportunities',
-      role: 'Real Estate Expert in the Yucatan Peninsula',
-      bio1: 'With deep knowledge of the Yucatan real estate market, I work with the most recognized developers to offer you investment opportunities that combine profitability, prime location and exceptional quality of life.',
+      role: 'Real Estate Expert in the Yucatan Peninsula & Quintana Roo',
+      bio1: 'With deep knowledge of the Yucatan & Quintana Roo real estate market, I work with the most recognized developers to offer you investment opportunities that combine profitability, prime location and exceptional quality of life.',
       bio2: 'My commitment is to accompany you every step of the way, from selecting the ideal development to the successful closing of your investment.',
     },
     developments: {
