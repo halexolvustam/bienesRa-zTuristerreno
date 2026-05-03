@@ -27,7 +27,7 @@ export function Navbar() {
           <img
             src="/logoTuris.png"
             alt="Turisterreno"
-            className={`h-10 w-auto transition-all ${isScrolled ? 'opacity-100' : 'brightness-0 invert'}`}
+            className={`h-14 w-auto transition-all ${isScrolled ? 'opacity-100' : 'brightness-0 invert'}`}
           />
         </a>
 
