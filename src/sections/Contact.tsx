@@ -35,7 +35,7 @@ export function Contact() {
       (window as any).gtag("event", "conversion", { send_to: "AW-10936994474/form_contact" });
     }
     if (form.contactMethod === 'Email') {
-      window.open(`mailto:asesor.alexolvera@gmail.com?subject=Solicitud sobre ${devName}&body=${msg}`, "_blank");
+      window.open(`mailto:alexolvera@turisterreno.com?subject=Solicitud sobre ${devName}&body=${msg}`, "_blank");
     } else {
       window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
     }
@@ -83,8 +83,8 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-green-300 text-sm">{t.contact.info.email}</p>
-                <a href="mailto:asesor.alexolvera@gmail.com" className="font-semibold hover:text-green-300 transition-colors text-sm break-all">
-                  asesor.alexolvera@gmail.com
+                <a href="mailto:alexolvera@turisterreno.com" className="font-semibold hover:text-green-300 transition-colors text-sm break-all">
+                  alexolvera@turisterreno.com
                 </a>
               </div>
             </div>

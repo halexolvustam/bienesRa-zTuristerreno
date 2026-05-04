@@ -26,9 +26,9 @@ export function About() {
                 <Phone className="w-5 h-5" />
                 <span>55 66 545971</span>
               </a>
-              <a href="mailto:asesor.alexolvera@gmail.com" className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition-colors">
+              <a href="mailto:alexolvera@turisterreno.com" className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>asesor.alexolvera@gmail.com</span>
+                <span>alexolvera@turisterreno.com</span>
               </a>
             </div>
           </div>
