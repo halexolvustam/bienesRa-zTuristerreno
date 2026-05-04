@@ -175,8 +175,7 @@ export const developments: Development[] = [
       { icon: 'Shield', label: 'Seguridad', labelEn: 'Security', value: '24/7' },
     ],
     brochureUrl: '/brochures/emana.pdf',
-    legalDocs: [],
-    type: 'terrenos',
+    legalDocs: [{ name: 'Pack Legal Emana Tulum', url: '/legal/legalEmanaT.pdf', type: 'pdf' }],    type: 'terrenos',
     status: 'available',
   },
   {
@@ -217,8 +216,8 @@ export const developments: Development[] = [
       { icon: 'Shield', label: 'Legal', labelEn: 'Legal', value: 'Fideicomiso', valueEn: 'Trust' },
     ],
     brochureUrl: '/brochures/aldea-holbox.pdf',
-    legalDocs: [],
-    type: 'terrenos',
+    legalDocs: [{ name: 'Pack Legal Aldea Holbox', url: '/legal/legAldea.pdf', type: 'pdf' }],
+        type: 'terrenos',
     status: 'available',
   },
 ];
