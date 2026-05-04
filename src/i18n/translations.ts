@@ -31,7 +31,7 @@ export const translations: Record<string, Translation> = {
       location: 'Ubicación',
       price: 'Precio desde',
       limitedAvailability: 'Disponibilidad limitada',
-      requestInfo: 'Solicitar información por WhatsApp',
+      requestInfo: 'Info por WhatsApp',
       brochure: 'Brochure',
       legal: 'Legal',
       status: {
@@ -106,7 +106,7 @@ export const translations: Record<string, Translation> = {
       location: 'Location',
       price: 'Price from',
       limitedAvailability: 'Limited Availability',
-      requestInfo: 'Request Info via WhatsApp',
+      requestInfo: 'Info via WhatsApp',
       brochure: 'Brochure',
       legal: 'Legal',
       status: {
