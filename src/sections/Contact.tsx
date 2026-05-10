@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { CheckCircle, Send, Phone, Mail, MapPin } from 'lucide-react';
 import { developments } from '@/data/developments';
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
   const { t, language } = useLanguage();
@@ -21,25 +22,46 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     const devName = form.development || (isEn ? 'Not specified' : 'No especificado');
-    const msg = encodeURIComponent(
-      `Hola, mensaje desde el sitio web:\n\n` +
-      `Nombre: ${form.name}\n` +
-      `Email: ${form.email}\n` +
-      `Telefono: ${form.phone || 'No proporcionado'}\n` +
-      `Desarrollo: ${devName}\n` +
-      `Contacto preferido: ${form.contactMethod || 'WhatsApp'}\n\n` +
-      `Mensaje:\n${form.message}`
-    );
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "conversion", { send_to: "AW-10936994474/form_contact" });
-    }
-    if (form.contactMethod === 'Email') {
-      window.open(`mailto:alexolvera@turisterreno.com?subject=Solicitud sobre ${devName}&body=${msg}`, "_blank");
+
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone || (isEn ? 'Not provided' : 'No proporcionado'),
+      development: devName,
+      contactMethod: form.contactMethod || 'WhatsApp',
+      message: form.message,
+    };
+
+    if (form.contactMethod === 'Email' || form.contactMethod === '') {
+      emailjs.send(
+        'service_mqsgmg9',
+        'template_y4phi5c',
+        templateParams,
+        '1ge-ilMlK-aYoiihp'
+      ).then(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      }).catch(() => {
+        setIsSubmitting(false);
+        alert(isEn ? 'Error sending email. Try WhatsApp.' : 'Error al enviar. Intenta por WhatsApp.');
+      });
     } else {
+      const msg = encodeURIComponent(
+        `Hola, mensaje desde el sitio web:\n\n` +
+        `Nombre: ${form.name}\n` +
+        `Email: ${form.email}\n` +
+        `Telefono: ${form.phone || 'No proporcionado'}\n` +
+        `Desarrollo: ${devName}\n\n` +
+        `Mensaje:\n${form.message}`
+      );
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "conversion", { send_to: "AW-10936994474/form_contact" });
+      }
       window.open(`https://wa.me/5215566545971?text=${msg}`, "_blank");
+      setTimeout(() => { setIsSubmitting(false); setIsSubmitted(true); }, 800);
     }
-    setTimeout(() => { setIsSubmitting(false); setIsSubmitted(true); }, 800);
   };
 
   const activeDevelopments = developments.filter(d => d.status !== 'hidden');
