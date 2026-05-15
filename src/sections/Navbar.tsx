@@ -43,8 +43,8 @@ export function Navbar() {
             </button>
 
             <a href="#contact" className="bg-green-900 hover:bg-green-800 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors">
-              {t.nav.contact}
-            </a>
+  {language === 'es' ? 'Cotiza gratis' : 'Get a free quote'}
+</a>
           </div>
 
           <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -67,7 +67,7 @@ export function Navbar() {
                 <span>{language === 'es' ? 'English' : 'Espanol'}</span>
               </button>
               <a href="#contact" className="bg-green-900 text-white text-center rounded-lg px-4 py-2 text-sm font-medium mt-2" onClick={() => setIsMobileMenuOpen(false)}>
-                {t.nav.contact}
+              {language === 'es' ? 'Cotiza gratis' : 'Get a free quote'}
               </a>
             </div>
           </div>
