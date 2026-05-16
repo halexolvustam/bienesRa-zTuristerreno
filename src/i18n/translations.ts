@@ -12,8 +12,10 @@ export const translations: Record<string, Translation> = {
     hero: {
       title: 'Encuentra tu patrimonio en Yucatán y Quintana Roo',
       subtitle: 'Desarrollos exclusivos que conectan con la esencia de la tierra, el mar y la historia',
-      cta: 'Explora Desarrollos',
+      cta: 'Desarrollos + Info',
       ctaContact: 'Contáctanos',
+      ctaQuote: 'Cotiza gratis',
+      infoLabel: 'Conoce antes de decidir:',
     },
     about: {
       title: 'Tu Asesor de Confianza',
@@ -87,8 +89,10 @@ export const translations: Record<string, Translation> = {
     hero: {
       title: 'Find Your Legacy in Yucatan & Quintana Roo',
       subtitle: 'Exclusive developments that connect with the essence of land, sea, and history',
-      cta: 'Explore Developments',
+      cta: 'Developments + Info',
       ctaContact: 'Contact Us',
+      ctaQuote: 'Get free quote',
+      infoLabel: 'Learn before you decide:',
     },
     about: {
       title: 'Your Trusted Advisor',
