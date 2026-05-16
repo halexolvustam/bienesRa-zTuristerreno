@@ -49,7 +49,7 @@ export function Hero() {
             <span className="text-white/30">·</span>
             <a href="https://wa.me/525566545971?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20cotizar" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-green-400 transition-colors text-sm font-medium">
               <MessageCircle className="w-4 h-4" />
-              WhatsApp
+              +Info
             </a>
           </div>
         </div>
