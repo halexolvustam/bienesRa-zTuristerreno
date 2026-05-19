@@ -350,7 +350,10 @@ export const developments: Development[] = [
       { icon: 'MapPin', label: 'Desarrollo', labelEn: 'Development', value: '159.6 Ha · 11 distritos', valueEn: '159.6 Ha · 11 districts' },
     ],
     brochureUrl: '/brochures/argento-colorin.pdf',
-    legalDocs: [],
+    legalDocs: [
+      { name: 'Pack Legal Ciudad Colorín (ES)', url: '/legal/packLegalEspCC.pdf', type: 'pdf' },
+      { name: 'Legal Pack Ciudad Colorín (EN)', url: '/legal/packLegalEngCC.pdf', type: 'pdf' },
+    ],
     type: 'terrenos',
     status: 'available',
   },
