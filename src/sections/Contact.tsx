@@ -85,11 +85,11 @@ export function Contact() {
               </div>
             </a>
 
-            <a href="mailto:alexolvera@turisterreno.com" className="flex items-center gap-4 w-full bg-green-800 hover:bg-green-700 transition-colors rounded-xl px-4 py-3">
+            <a href="mailto:asesor.alexolvera@gmail.com" className="flex items-center gap-4 w-full bg-green-800 hover:bg-green-700 transition-colors rounded-xl px-4 py-3">
               <div className="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center flex-shrink-0"><Mail className="w-5 h-5" /></div>
               <div>
                 <p className="text-green-300 text-xs">{isEn ? "Email us" : "Escríbenos"}</p>
-                <p className="font-semibold text-xs break-all">alexolvera@turisterreno.com</p>
+                <p className="font-semibold text-xs break-all">asesor.alexolvera@gmail.com</p>
               </div>
             </a>
 
